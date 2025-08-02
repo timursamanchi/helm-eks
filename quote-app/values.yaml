@@ -1,0 +1,26 @@
+namespace: quote-app
+
+backend:
+  name: quote-backend
+  image: timursamanchi/quote-backend:helm
+  port: 8080
+  replicaCount: 1
+  resources:
+    limits:
+      cpu: "500m"
+      memory: "512Mi"
+    requests:
+      cpu: "100m"
+      memory: "128Mi"
+
+frontend:
+  name: quote-frontend
+  image: timursamanchi/quote-frontend:helm
+  port: 4000
+  replicaCount: 1
+  resources: {}
+
+busybox:
+  enabled: true
+  image: busybox
+  command: ["sleep", "3600"]
