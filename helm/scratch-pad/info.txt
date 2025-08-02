@@ -1,0 +1,17 @@
+namespace: quote-app
+
+backend:
+  name: quote-backend
+  image: timursamanchi/quote-backend:j02
+  replicaCount: 2
+  port: 8080
+
+frontend:
+  name: quote-frontend
+  image: timursamanchi/quote-frontend:j02
+  replicaCount: 1
+  port: 80
+
+ingress:
+  enabled: true
+  className: nginx
